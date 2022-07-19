@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- Hier wird der Text "Text" über dem erhaltenen Text erstellt -->
+
+    <TextView
+        android:id="@+id/tvUserInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/Text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Hier wird das Feld für den erhaltenen Text erstellt -->
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="314dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/ReceivedText"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:singleLine="false"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
+        tools:ignore="Autofill" />
+
+    <!-- Hier wird der erhaltene Text in Morse angezeigt -->
+    <EditText
+        android:id="@+id/etMorse"
+        android:layout_width="314dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/ReceivedMorse"
+        android:inputType="textMultiLine"
+        android:maxLines="150"
+        android:singleLine="false"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput"
+        tools:ignore="Autofill" />
+
+
+    <!-- Hier wird der Text "Received Morse" über dem erhaltenen Text erstellt -->
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="212dp"
+        android:text="@string/Morse"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etText" />
+
+    <!-- Hier wird der Button für das erhalten der Morse erstellt -->
+    <Button
+        android:id="@+id/btnReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/Receive"
+        android:onClick="popUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMorse" />
+</android.support.constraint.ConstraintLayout>

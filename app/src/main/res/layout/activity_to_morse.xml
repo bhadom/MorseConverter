@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hier wird das Constraint Layout erstellt -->
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- Hier wird die Textview mit dem Titel Text für die Benutzereingabe erstellt.-->
+    <TextView
+        android:id="@+id/tvUserInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/UserInput"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Hier wird das eigentliche Feld für die Benutzereingabe erstellt-->
+    <EditText
+        android:id="@+id/etText"
+        android:layout_width="314dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/EnterYourText"
+        android:maxLines="10"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserInput"
+        tools:ignore="Autofill" />
+
+    <!-- Hier wird der Knopf für das Konvertieren von Text zu Morse erstellt -->
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="@string/Convert"
+        android:textSize="18sp"
+        android:onClick="convertToMorse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etText"/>
+
+    <!-- Hier wird eine Textview für den Fall das es einen Error geben sollte erstellt-->
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ErrorText"
+        android:textColor="@color/colorError"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvert"
+        tools:visibility="gone" />
+
+    <!-- Hier wird das Feld für die Ausgabe erstellt -->
+    <EditText
+        android:id="@+id/etOutput"
+        android:layout_width="346dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/Morse"
+        android:inputType="textMultiLine"
+        android:maxLines="150"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput"
+        tools:ignore="Autofill" />
+
+    <!-- Hier wird die Textview mit dem Titel Output erstellt -->
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/Output"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvError" />
+
+</android.support.constraint.ConstraintLayout>
